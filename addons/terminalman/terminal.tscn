@@ -1,0 +1,61 @@
+[gd_scene load_steps=5 format=3 uid="uid://cg4ob48m2odca"]
+
+[ext_resource type="Theme" uid="uid://dy7aig36prgba" path="res://addons/terminalman/theme.tres" id="1_7cd1w"]
+[ext_resource type="Script" path="res://addons/terminalman/terminal.gd" id="2_7071a"]
+[ext_resource type="FontFile" uid="uid://dg6nxb7da37m" path="res://addons/terminalman/Inconsolata-Regular.ttf" id="3_krw1l"]
+[ext_resource type="FontFile" uid="uid://bltnx8bqn6rkr" path="res://addons/terminalman/Inconsolata-Bold.ttf" id="4_82w7x"]
+
+[node name="Terminal" type="Panel"]
+process_mode = 3
+visible = false
+z_index = 4096
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+theme = ExtResource("1_7cd1w")
+script = ExtResource("2_7071a")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -23.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_scroll_mode = 0
+
+[node name="Log" type="RichTextLabel" parent="ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_fonts/normal_font = ExtResource("3_krw1l")
+theme_override_fonts/bold_font = ExtResource("4_82w7x")
+bbcode_enabled = true
+
+[node name="Input" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -21.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("3_krw1l")
+
+[node name="Ver" type="Label" parent="."]
+modulate = Color(1, 1, 1, 0.196078)
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -81.0
+offset_right = -22.0
+offset_bottom = -13.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 50
+text = "1.0.0"
+vertical_alignment = 2
